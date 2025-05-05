@@ -36,4 +36,82 @@ a{
 a:hover{
   text-decoration: underline;
 }
-    
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  transition: opacity 0.3s ease;/* ←アニメーションでなめらかに */
+}
+
+nav a:hover {
+  opacity: 0.5;/* ←カーソル合わせたときに薄くなる */
+}
+
+/* メインメニューの横並び */
+.main-menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 0;
+  margin: 0;
+}
+
+.main-menu > li {
+  position: relative;
+}
+
+/* サブメニューを最初は非表示 */
+.sub-menu {
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 10px 0;
+  display: none;
+  min-width: 180px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* サブメニューのリンク */
+.sub-menu li a {
+  display: block;
+  padding: 8px 16px;
+  color: #333;
+  text-decoration: none;
+}
+
+/* ホバーでサブメニュー表示 */
+.main-menu > li:hover .sub-menu {
+  display: block;
+}
+
+/* ホバー時に文字を薄くする */
+.main-menu > li > a:hover {
+  opacity: 0.6;
+}
+
+/* メインメニューの区切り線 */
+.main-menu > li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 1em;
+  background-color: #ccc;
+}
